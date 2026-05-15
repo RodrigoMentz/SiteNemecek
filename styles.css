@@ -312,7 +312,6 @@ em { font-style: italic; font-weight: 200; }
   border-bottom: 1px solid rgba(0,0,0,.1);
   padding: 1.5rem 0;
   white-space: nowrap;
-  display: none;
 }
 .marquee-track {
   display: inline-block;
@@ -511,25 +510,6 @@ em { font-style: italic; font-weight: 200; }
   line-height: 1;
   margin: 0 0 1.5rem;
 }
-.fp-p {
-  font-size: 1.05rem; line-height: 1.55; max-width: 50ch;
-  font-weight: 300; color: #333;
-  margin-bottom: 3rem;
-}
-.fp-spec {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(0,0,0,.15);
-  border-bottom: 1px solid rgba(0,0,0,.15);
-}
-.fp-spec > div {
-  padding: 1.5rem 1rem 1.5rem 0;
-  display: flex; flex-direction: column; gap: .4rem;
-  border-right: 1px solid rgba(0,0,0,.1);
-}
-.fp-spec > div:last-child { border-right: 0; }
-.fp-spec .k { font-family: var(--font-mono); font-size: .65rem; opacity: .4; letter-spacing: .2em; }
-.fp-spec .v { font-size: 1.8rem; line-height: 1; }
-.fp-spec .l { font-size: .7rem; opacity: .6; text-transform: uppercase; letter-spacing: .15em; }
 
 .fp-image {
   position: relative;
@@ -572,6 +552,10 @@ em { font-style: italic; font-weight: 200; }
   font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
   opacity: .7;
   padding-top: 1rem;
+}
+
+.retirar-depois {
+  display: none;
 }
 
 @media (max-width: 1050px) {
