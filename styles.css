@@ -312,6 +312,7 @@ em { font-style: italic; font-weight: 200; }
   border-bottom: 1px solid rgba(0,0,0,.1);
   padding: 1.5rem 0;
   white-space: nowrap;
+  display: none;
 }
 .marquee-track {
   display: inline-block;
@@ -374,20 +375,7 @@ em { font-style: italic; font-weight: 200; }
 .obra-head {
   max-width: 1400px; margin: 0 auto;
   padding: 0 3rem;
-  display: grid; grid-template-columns: 1fr 5fr 4fr;
-  gap: 4rem; align-items: end;
   margin-bottom: 8rem;
-}
-.obra-h {
-  font-size: clamp(2.5rem, 6vw, 6rem);
-  line-height: .98;
-  margin: 0;
-}
-.obra-h em { color: var(--c-warm); }
-.obra-p {
-  font-size: 1.05rem; line-height: 1.6;
-  font-weight: 300;
-  max-width: 50ch; opacity: .85;
 }
 
 /* sticky stage */
@@ -422,37 +410,12 @@ em { font-style: italic; font-weight: 200; }
 .stage-row span:first-child { opacity: .4; }
 .stage-row .dim { opacity: .65; font-weight: 300; }
 
-/* triptych */
-.triptych {
-  max-width: 1600px; margin: 0 auto;
-  padding: 0 3rem;
-  display: grid; grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 1.5rem;
-}
-.tri { margin: 0; position: relative; }
-.tri-img {
-  width: 100%; aspect-ratio: 4/5;
-  background-size: cover; background-position: center;
-  transition: transform 1.6s ease;
-}
-.tri.tall .tri-img { aspect-ratio: 3/5; }
-.tri:hover .tri-img { transform: scale(1.04); }
-.tri figcaption {
-  display: flex; gap: 1rem;
-  padding-top: 1rem;
-  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
-  opacity: .7;
-}
-.tri figcaption span { opacity: .5; }
-
 @media (max-width: 900px) {
   .obra { padding: 6rem 0 4rem; }
-  .obra-head { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2rem; margin-bottom: 3rem; }
+  .obra-head { padding: 0 1.5rem; margin-bottom: 3rem; }
   .obra-stage { height: 70vh; min-height: 480px; margin: 0 1.5rem 4rem; }
   .obra-stage-meta { left: 1.25rem; bottom: 1.25rem; }
   .stage-row { min-width: 0; grid-template-columns: 24px 100px 1fr; gap: .8rem; font-size: .6rem; padding-bottom: .5rem; }
-  .triptych { grid-template-columns: 1fr; padding: 0 1.5rem; }
-  .tri-img, .tri.tall .tri-img { aspect-ratio: 4/3; }
 }
 
 /* ============================================================
