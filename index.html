@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Studios Avenida II — Santa Cruz do Sul, RS</title>
+<meta name="description" content="Studios Avenida II — um novo capítulo no coração de Santa Cruz do Sul. Studios planejados, lazer completo, vista que respira."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Manrope:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body class="bg-dark text-stone">
+
+<!-- NOISE -->
+<div class="noise-overlay"></div>
+
+<!-- PRELOADER -->
+<div class="loader" id="loader" data-screen-label="00 Loader">
+  <div class="loader-inner">
+    <div class="loader-label display">STUDIOS / AVENIDA II</div>
+    <div class="loader-sub">SANTA CRUZ DO SUL · RS</div>
+    <div class="loader-track"><span class="loader-bar"></span></div>
+    <div class="loader-percent display"><span id="loaderPct">000</span></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <a class="brand" href="#top">
+    <span class="brand-mark display">SA<span class="brand-mark-thin">II</span></span>
+    <span class="brand-stack">
+      <span class="brand-name display">STUDIOS AVENIDA II</span>
+      <span class="brand-place">Santa Cruz do Sul · RS</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#obra">A Obra</a></li>
+    <li><a href="#studios">Studios</a></li>
+    <li><a href="#lazer">Lazer</a></li>
+    <li><a href="#cidade">A Cidade</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">
+    <span>Quero meu Studio</span>
+    <svg viewBox="0 0 16 16" width="14" height="14"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  </a>
+  <button class="nav-burger" aria-label="Menu" id="navBurger"><span></span><span></span></button>
+</nav>
+
+<main id="top">
+
+  <!-- ================== HERO ================== -->
+  <section class="hero" data-screen-label="01 Hero">
+
+    <!-- "Video" loop: Ken Burns crossfade between facade frames. Swap with real .mp4 when received. -->
+    <div class="hero-video" id="heroVideo">
+      <div class="hero-frame is-active" style="background-image:url('assets/hero-01-facade-front.jpeg')"></div>
+      <div class="hero-frame" style="background-image:url('assets/hero-02-facade-sunset.jpeg')"></div>
+      <div class="hero-frame" style="background-image:url('assets/facade-warm.jpeg')"></div>
+      <div class="hero-frame" style="background-image:url('assets/hero-03-facade-street.jpeg')"></div>
+      <!-- Optional real video tag — uncomment + provide src when video is ready -->
+      <!-- <video class="hero-real-video" autoplay muted loop playsinline src="assets/predio.mp4"></video> -->
+    </div>
+
+    <div class="hero-grade"></div>
+    <div class="hero-vignette"></div>
+
+    <!-- Top meta strip -->
+    <div class="hero-strip">
+      <div class="strip-item">
+        <span class="strip-key">LANÇAMENTO</span>
+        <span class="strip-val">2026</span>
+      </div>
+      <div class="strip-rec">
+        <span class="rec-dot"></span>
+        <span class="rec-label">AO VIVO · TOUR PELA OBRA</span>
+        <span class="rec-time" id="heroClock">00:00</span>
+      </div>
+      <div class="strip-item right">
+        <span class="strip-key">UNIDADES</span>
+        <span class="strip-val">Restam <em>17</em> de 56</span>
+      </div>
+    </div>
+
+    <!-- Center content -->
+    <div class="hero-center">
+      <p class="hero-pre split-animate">Um novo endereço. Um novo capítulo.</p>
+      <h1 class="hero-title display">
+        <span class="line"><span class="word">STUDIOS</span></span>
+        <span class="line line-offset"><span class="word">AVENIDA<span class="hero-numeral">II</span></span></span>
+      </h1>
+      <p class="hero-place split-animate">Av. Independência · Santa Cruz do Sul · Rio Grande do Sul</p>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="hero-bottom">
+      <button class="play-pill" id="playPill" aria-label="Assistir tour completo">
+        <span class="pill-icon"><svg viewBox="0 0 20 20" width="14" height="14"><path d="M5 3l12 7-12 7V3z" fill="currentColor"/></svg></span>
+        <span class="pill-text">
+          <span class="pill-line">Assistir o tour pelo prédio</span>
+          <span class="pill-sub">2 min · com narração</span>
+        </span>
+      </button>
+
+      <div class="hero-scroll">
+        <span class="scroll-label">role para descobrir</span>
+        <span class="scroll-line"></span>
+      </div>
+
+      <div class="hero-tag">
+        <span class="tag-key">obra</span>
+        <span class="tag-val">Entrega Dez · 2027</span>
+      </div>
+    </div>
+
+    <!-- corner crosshairs (cinematic) -->
+    <div class="cross tl"></div><div class="cross tr"></div>
+    <div class="cross bl"></div><div class="cross br"></div>
+  </section>
+
+  <!-- ================== MANIFESTO ================== -->
+  <section class="manifesto" id="manifesto" data-screen-label="02 Manifesto">
+    <div class="manifesto-inner">
+      <div class="section-eyebrow">
+        <span class="num">01 /</span>
+        <span class="lbl">Manifesto</span>
+      </div>
+
+      <h2 class="manifesto-text display">
+        <span class="line">Existe uma <em>cidade</em></span>
+        <span class="line">que respira <em>história</em></span>
+        <span class="line">no Vale do <em>Rio Pardo</em>.</span>
+        <span class="line spacer"></span>
+        <span class="line">E existe um <em>lugar</em></span>
+        <span class="line">dentro dela onde a</span>
+        <span class="line"><em>sua</em> história começa.</span>
+      </h2>
+
+      <div class="manifesto-foot">
+        <p class="m-foot-text">
+          Studios Avenida II não é só um endereço. É a primeira chave da sua vida.
+          É o café da manhã com a luz do amanhecer entrando pela varanda.
+          É chegar em casa, fechar a porta, e finalmente sentir: <em>aqui é meu</em>.
+        </p>
+        <div class="m-foot-sign">
+          <span class="sign-line">— Studios Avenida II</span>
+          <span class="sign-coords">29°43′S · 52°25′W</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- floating marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track display">
+        <span>VIVA NO CORAÇÃO DE SANTA CRUZ</span><span class="dot">•</span>
+        <span>STUDIOS DE 28 A 42M²</span><span class="dot">•</span>
+        <span>ROOFTOP COM VISTA</span><span class="dot">•</span>
+        <span>OBRA COM ENTREGA DEZ/2027</span><span class="dot">•</span>
+        <span>VIVA NO CORAÇÃO DE SANTA CRUZ</span><span class="dot">•</span>
+        <span>STUDIOS DE 28 A 42M²</span><span class="dot">•</span>
+        <span>ROOFTOP COM VISTA</span><span class="dot">•</span>
+        <span>OBRA COM ENTREGA DEZ/2027</span><span class="dot">•</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== KEY NUMBERS ================== -->
+  <section class="numbers" data-screen-label="03 Numbers">
+    <div class="num-grid">
+      <div class="num-cell">
+        <span class="n-key">01</span>
+        <span class="n-val display">56</span>
+        <span class="n-lbl">studios planejados</span>
+      </div>
+      <div class="num-cell">
+        <span class="n-key">02</span>
+        <span class="n-val display">9</span>
+        <span class="n-lbl">pavimentos</span>
+      </div>
+      <div class="num-cell">
+        <span class="n-key">03</span>
+        <span class="n-val display">28<small>—</small>42</span>
+        <span class="n-lbl">m² privativos</span>
+      </div>
+      <div class="num-cell">
+        <span class="n-key">04</span>
+        <span class="n-val display">11</span>
+        <span class="n-lbl">áreas de lazer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== A OBRA / FACADE ================== -->
+  <section class="obra" id="obra" data-screen-label="04 A Obra">
+    <div class="obra-head">
+      <div class="section-eyebrow light">
+        <span class="num">02 /</span>
+        <span class="lbl">A Obra</span>
+      </div>
+      <h2 class="obra-h display">
+        <span>Uma silhueta</span><br/>
+        <span><em>contemporânea</em></span><br/>
+        <span>na avenida.</span>
+      </h2>
+      <p class="obra-p">
+        Linhas escuras, vidros profundos, vegetação que escorre pelas varandas. O prédio foi pensado para envelhecer com elegância — ganhar patina com o tempo, refletir os pores-do-sol do Pardo, e ainda assim continuar atual daqui a vinte anos.
+      </p>
+    </div>
+
+    <!-- Big sticky facade reveal -->
+    <div class="obra-stage">
+      <div class="obra-stage-bg" style="background-image:url('assets/facade-angle.jpeg')"></div>
+      <div class="obra-stage-meta">
+        <div class="stage-row"><span>01</span><span>Implantação</span><span class="dim">Avenida Independência</span></div>
+        <div class="stage-row"><span>02</span><span>Volumetria</span><span class="dim">Torre única, 9 pavimentos</span></div>
+        <div class="stage-row"><span>03</span><span>Materialidade</span><span class="dim">Concreto pigmentado · vidro fumê · LED</span></div>
+        <div class="stage-row"><span>04</span><span>Vista</span><span class="dim">Centro histórico e vale do Pardo</span></div>
+      </div>
+    </div>
+
+    <!-- Triptych -->
+    <div class="triptych">
+      <figure class="tri tall">
+        <div class="tri-img" style="background-image:url('assets/facade-balconies.jpeg')"></div>
+        <figcaption><span>01</span> Varandas com jardineiras integradas</figcaption>
+      </figure>
+      <figure class="tri">
+        <div class="tri-img" style="background-image:url('assets/facade-detail.jpeg')"></div>
+        <figcaption><span>02</span> Detalhe da fachada · luz quente embutida</figcaption>
+      </figure>
+      <figure class="tri">
+        <div class="tri-img" style="background-image:url('assets/facade-warm.jpeg')"></div>
+        <figcaption><span>03</span> Hora dourada vista do campo aberto</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================== STUDIOS ================== -->
+  <section class="studios" id="studios" data-screen-label="05 Studios">
+
+    <div class="studios-head">
+      <div class="section-eyebrow">
+        <span class="num">03 /</span>
+        <span class="lbl">Os Studios</span>
+      </div>
+      <h2 class="studios-h display">
+        <span>Tudo o que cabe</span><br/>
+        <span>na sua vida —</span><br/>
+        <span><em>e nada que sobre.</em></span>
+      </h2>
+    </div>
+
+    <!-- Studio split feature -->
+    <div class="studio-feature">
+      <div class="sf-images">
+        <div class="sf-img big" style="background-image:url('assets/studio-living.jpeg')"></div>
+        <div class="sf-img sm one" style="background-image:url('assets/studio-kitchen.jpeg')"></div>
+        <div class="sf-img sm two" style="background-image:url('assets/studio-bedroom.jpeg')"></div>
+      </div>
+      <div class="sf-text">
+        <p class="sf-kicker">Studio Tipo · 38m²</p>
+        <h3 class="display sf-h">Um <em>refúgio</em><br/>de poucos passos.</h3>
+        <ul class="sf-list">
+          <li><span>01</span> Living integrado com cozinha em marcenaria amadeirada</li>
+          <li><span>02</span> Dormitório com closet vidro e iluminação de cena</li>
+          <li><span>03</span> Banheiro em mármore preto e mosaico verde-musgo</li>
+          <li><span>04</span> Lavanderia compacta com vista panorâmica</li>
+          <li><span>05</span> Varanda com jardineira plantada e piso amadeirado</li>
+        </ul>
+        <a href="#contato" class="sf-link">Quero ver na planta <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- Floor plan + details -->
+    <div class="floorplan-wrap">
+      <div class="fp-meta">
+        <p class="fp-eyebrow">Planta tipo · 38m²</p>
+        <h3 class="display fp-h">Cada metro,<br/>pensado.</h3>
+        <p class="fp-p">
+          Os ângulos foram desenhados para acompanhar a luz natural do Rio Grande do Sul ao longo do dia. A cozinha encontra o living sem barreira; o dormitório respira pela varanda; o banho fica em volume próprio, isolado e silencioso.
+        </p>
+
+        <div class="fp-spec">
+          <div><span class="k">01</span><span class="v display">38m²</span><span class="l">área privativa</span></div>
+          <div><span class="k">02</span><span class="v display">2,80m</span><span class="l">pé-direito</span></div>
+          <div><span class="k">03</span><span class="v display">SUL</span><span class="l">orientação preferencial</span></div>
+        </div>
+      </div>
+
+      <div class="fp-image">
+        <div class="fp-img-inner" style="background-image:url('assets/studio-floorplan.jpeg')"></div>
+        <div class="fp-pin pin-1"><span>01</span><b>LIVING</b></div>
+        <div class="fp-pin pin-2"><span>02</span><b>COZINHA</b></div>
+        <div class="fp-pin pin-3"><span>03</span><b>DORMITÓRIO</b></div>
+        <div class="fp-pin pin-4"><span>04</span><b>BANHO</b></div>
+      </div>
+    </div>
+
+    <!-- Interior gallery strip -->
+    <div class="strip-gallery">
+      <figure><div class="sg-img" style="background-image:url('assets/studio-bedroom-2.jpeg')"></div><figcaption>Dormitório · vista para Santa Cruz</figcaption></figure>
+      <figure><div class="sg-img" style="background-image:url('assets/studio-bathroom.jpeg')"></div><figcaption>Banho · ripado amadeirado e LED indireto</figcaption></figure>
+      <figure><div class="sg-img" style="background-image:url('assets/amenity-laundry-view.jpeg')"></div><figcaption>Lavanderia · com a igreja matriz no horizonte</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================== LAZER ================== -->
+  <section class="lazer" id="lazer" data-screen-label="06 Lazer">
+
+    <div class="lazer-head">
+      <div class="section-eyebrow light">
+        <span class="num">04 /</span>
+        <span class="lbl">Áreas de lazer</span>
+      </div>
+      <h2 class="display lazer-h">
+        <span>Onze razões</span><br/>
+        <span>para nunca <em>querer</em></span><br/>
+        <span>sair de casa.</span>
+      </h2>
+      <p class="lazer-p">
+        Cada andar oferece um motivo. Do térreo paisagístico ao rooftop com fogo de chão. Áreas pensadas para morar bem, trabalhar perto, receber sem aperto e respirar — todos os dias.
+      </p>
+    </div>
+
+    <!-- Stacked feature cards -->
+    <div class="stack-rail">
+
+      <article class="stack-card">
+        <div class="sc-content">
+          <span class="sc-num display">01</span>
+          <h3 class="display sc-h">ROOFTOP<br/>SUNSET</h3>
+          <p class="sc-p">Fogo de chão, vista para o vale, e o pôr-do-sol mais bem servido de Santa Cruz. Reserva por aplicativo, lounges integrados, e cobertura iluminada para receber até 30 pessoas sem aperto.</p>
+          <div class="sc-tags"><span>9º pavimento</span><span>Fire pits</span><span>Vista 360°</span></div>
+        </div>
+        <div class="sc-img" style="background-image:url('assets/amenity-rooftop.jpeg')"></div>
+      </article>
+
+      <article class="stack-card reverse">
+        <div class="sc-content">
+          <span class="sc-num display">02</span>
+          <h3 class="display sc-h">LOUNGE<br/>&amp; CHURRASCO</h3>
+          <p class="sc-p">Um espaço para o casual e o especial. Churrasqueira em mármore preto, cervejeira, cafeteria 24h. Onde a sexta vira sábado sem ninguém perceber.</p>
+          <div class="sc-tags"><span>Térreo</span><span>Capacidade 40</span><span>Lareira</span></div>
+        </div>
+        <div class="sc-img" style="background-image:url('assets/amenity-lounge.jpeg')"></div>
+      </article>
+
+      <article class="stack-card">
+        <div class="sc-content">
+          <span class="sc-num display">03</span>
+          <h3 class="display sc-h">COWORKING<br/>24 HORAS</h3>
+          <p class="sc-p">Quatro mesas individuais, uma bancada compartilhada, cabines com isolamento acústico. Café à vontade. Para quem trabalha de casa — sem trabalhar de casa.</p>
+          <div class="sc-tags"><span>Wi-Fi corporativo</span><span>Cabines call</span><span>Impressora</span></div>
+        </div>
+        <div class="sc-img" style="background-image:url('assets/amenity-coworking.jpeg')"></div>
+      </article>
+
+      <article class="stack-card reverse">
+        <div class="sc-content">
+          <span class="sc-num display">04</span>
+          <h3 class="display sc-h">ESPAÇO<br/>PET</h3>
+          <p class="sc-p">Pet-shower com mosaico, brinquedos, sombra de palmeira e grama que sobrevive ao inverno gaúcho. Porque eles também são família.</p>
+          <div class="sc-tags"><span>Pet-shower</span><span>Grama natural</span><span>Iluminação noturna</span></div>
+        </div>
+        <div class="sc-img" style="background-image:url('assets/amenity-pet.jpeg')"></div>
+      </article>
+
+      <article class="stack-card">
+        <div class="sc-content">
+          <span class="sc-num display">05</span>
+          <h3 class="display sc-h">BICICLETÁRIO<br/>&amp; OFICINA</h3>
+          <p class="sc-p">Quarenta vagas verticais, ferramentas comunitárias e estação de carregamento para e-bikes. Santa Cruz é plana — sua rotina deveria ser de bike.</p>
+          <div class="sc-tags"><span>40 vagas</span><span>Carregador e-bike</span><span>Bombas e ferramentas</span></div>
+        </div>
+        <div class="sc-img" style="background-image:url('assets/amenity-bicicletario.jpeg')"></div>
+      </article>
+
+      <article class="stack-card reverse">
+        <div class="sc-content">
+          <span class="sc-num display">06</span>
+          <h3 class="display sc-h">GARAGEM<br/>&amp; ACESSOS</h3>
+          <p class="sc-p">Pilotis arborizados, portaria com biometria, vagas demarcadas com piso polido e jardim central. Cada chegada em casa começa bem antes da porta abrir.</p>
+          <div class="sc-tags"><span>Biometria</span><span>Vagas tour duplo</span><span>Portaria 24h</span></div>
+        </div>
+        <div class="sc-img" style="background-image:url('assets/amenity-parking.jpeg')"></div>
+      </article>
+
+    </div>
+
+    <!-- Other amenities grid -->
+    <div class="extras-grid">
+      <h4 class="display extras-h">+ Ainda incluso</h4>
+      <ul class="extras-list">
+        <li><span>07</span> Hall social com pé-direito duplo</li>
+        <li><span>08</span> Elevadores Schindler de alta performance</li>
+        <li><span>09</span> Lavanderia compartilhada premium</li>
+        <li><span>10</span> Brinquedoteca &amp; espaço família</li>
+        <li><span>11</span> Bicicletário coberto e iluminado</li>
+        <li><span>↗</span> Pacote completo de mobiliário planejado opcional</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================== CIDADE ================== -->
+  <section class="cidade" id="cidade" data-screen-label="07 A Cidade">
+    <div class="cidade-bg" style="background-image:url('assets/amenity-laundry-view.jpeg')"></div>
+    <div class="cidade-overlay"></div>
+    <div class="cidade-content">
+
+      <div class="section-eyebrow light">
+        <span class="num">05 /</span>
+        <span class="lbl">A Cidade</span>
+      </div>
+
+      <h2 class="display cidade-h">
+        <span>Onde o</span><br/>
+        <span><em>Pardo</em> encontra</span><br/>
+        <span>quem fica.</span>
+      </h2>
+
+      <p class="cidade-p">
+        Santa Cruz do Sul é a cidade que cresce sem perder a cara. Capital nacional do fumo, terra de Oktoberfest, segunda casa do Vale do Rio Pardo. Aqui a vida tem o ritmo certo: praças onde se senta, ruas que se caminha, e um pôr-do-sol que ainda dá tempo de ver da janela.
+      </p>
+
+      <div class="cidade-grid">
+        <div class="c-item"><span class="ci-key display">130k</span><span class="ci-lbl">habitantes</span></div>
+        <div class="c-item"><span class="ci-key display">8 min</span><span class="ci-lbl">ao Centro</span></div>
+        <div class="c-item"><span class="ci-key display">UNISC</span><span class="ci-lbl">universidade a 4 min</span></div>
+        <div class="c-item"><span class="ci-key display">3h</span><span class="ci-lbl">de Porto Alegre</span></div>
+      </div>
+
+      <!-- Mini-map / orientation -->
+      <div class="city-orient">
+        <div class="orient-row">
+          <span class="o-dist">120m</span>
+          <span class="o-line"></span>
+          <span class="o-place">Avenida Independência</span>
+        </div>
+        <div class="orient-row">
+          <span class="o-dist">450m</span>
+          <span class="o-line"></span>
+          <span class="o-place">Catedral São João Batista</span>
+        </div>
+        <div class="orient-row">
+          <span class="o-dist">650m</span>
+          <span class="o-line"></span>
+          <span class="o-place">Largo da Oktoberfest</span>
+        </div>
+        <div class="orient-row">
+          <span class="o-dist">1,2km</span>
+          <span class="o-line"></span>
+          <span class="o-place">Shopping Germânia</span>
+        </div>
+        <div class="orient-row">
+          <span class="o-dist">2,4km</span>
+          <span class="o-line"></span>
+          <span class="o-place">Hospital Santa Cruz</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================== POR QUE COMPRAR ================== -->
+  <section class="reasons" data-screen-label="08 Reasons">
+    <div class="reasons-head">
+      <div class="section-eyebrow">
+        <span class="num">06 /</span>
+        <span class="lbl">Por que agora</span>
+      </div>
+      <h2 class="display reasons-h">Quem espera, paga mais.</h2>
+    </div>
+
+    <div class="reasons-grid">
+
+      <div class="reason">
+        <span class="r-num display">01</span>
+        <h3 class="display r-h">VALOR DE LANÇAMENTO</h3>
+        <p>Tabela de pré-lançamento congelada até o fim do mês. Cada andar entregue, a tabela sobe — quem entra agora, entra mais barato.</p>
+        <span class="r-emph">A partir de <em>R$ 289 mil</em></span>
+      </div>
+
+      <div class="reason">
+        <span class="r-num display">02</span>
+        <h3 class="display r-h">PARCELAMENTO DIRETO</h3>
+        <p>Sem banco no meio. Entrada parcelada, balões anuais ajustados pelo INCC, e financiamento bancário só na entrega das chaves.</p>
+        <span class="r-emph">Em até <em>72×</em> direto</span>
+      </div>
+
+      <div class="reason">
+        <span class="r-num display">03</span>
+        <h3 class="display r-h">RENTABILIDADE</h3>
+        <p>Santa Cruz tem ocupação de aluguel acima de 95% no centro. Studios mobiliados rendem entre 0,7% e 0,9% ao mês — superando o CDI líquido.</p>
+        <span class="r-emph">Yield estimado <em>9,1%</em>/ano</span>
+      </div>
+
+      <div class="reason">
+        <span class="r-num display">04</span>
+        <h3 class="display r-h">AVENIDA II</h3>
+        <p>A primeira torre vendeu 100% em quatro meses. Esta é a continuação — mesma equipe, mesmo padrão de acabamento, novo endereço.</p>
+        <span class="r-emph">Torre <em>I</em> esgotada · 2024</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================== CONTATO ================== -->
+  <section class="contato" id="contato" data-screen-label="09 Contato">
+    <div class="contato-grid">
+
+      <div class="contato-left">
+        <div class="section-eyebrow light">
+          <span class="num">07 /</span>
+          <span class="lbl">Agende sua visita</span>
+        </div>
+        <h2 class="display contato-h">
+          <span>Venha ver</span><br/>
+          <span>de <em>perto.</em></span>
+        </h2>
+        <p class="contato-p">
+          A maquete em escala fica na nossa central, na Av. Independência, esquina com a Rua Marechal Floriano. Visita guiada com café, planta humana 1:1 dos studios, e tour virtual pela cobertura.
+        </p>
+
+        <div class="contato-info">
+          <div class="ci-block">
+            <span class="ci-k">Stand de vendas</span>
+            <span class="ci-v">Av. Independência, 2480<br/>Santa Cruz do Sul · RS</span>
+          </div>
+          <div class="ci-block">
+            <span class="ci-k">Atendimento</span>
+            <span class="ci-v">Seg a Sáb · 09h–19h<br/>Domingo com agendamento</span>
+          </div>
+          <div class="ci-block">
+            <span class="ci-k">Falar agora</span>
+            <span class="ci-v">+55 (51) 9 9876-5432<br/>contato@studiosavenida.com.br</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contato-form" id="leadForm" novalidate>
+        <p class="cf-eyebrow">Reserve sua unidade</p>
+        <h3 class="display cf-h">Receba a tabela <em>hoje.</em></h3>
+
+        <label class="field">
+          <span>Nome</span>
+          <input type="text" name="nome" placeholder="Como podemos te chamar" required/>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>WhatsApp</span>
+            <input type="tel" name="tel" placeholder="(51) 9 0000-0000" required/>
+          </label>
+          <label class="field">
+            <span>E-mail</span>
+            <input type="email" name="email" placeholder="seu@email.com"/>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Qual a sua intenção</span>
+          <select name="intencao">
+            <option>Morar</option>
+            <option>Investir para alugar</option>
+            <option>Comprar para a família</option>
+            <option>Estou curioso, ainda decidindo</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Quando pretende mudar</span>
+          <select name="quando">
+            <option>Assim que ficar pronto · Dez/2027</option>
+            <option>Pode ser depois — sou investidor</option>
+            <option>Quero entender melhor primeiro</option>
+          </select>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" checked/>
+          <span>Quero receber a tabela completa por WhatsApp em até 1 hora.</span>
+        </label>
+
+        <button type="submit" class="cf-submit">
+          <span>Quero meu Studio</span>
+          <svg viewBox="0 0 16 16" width="14" height="14"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+
+        <p class="cf-fine">
+          Ao enviar você concorda em receber contato comercial da nossa equipe.
+          Seus dados não são compartilhados com terceiros.
+        </p>
+
+        <div class="cf-success" id="cfSuccess" hidden>
+          <span class="display">Recebido.</span>
+          <p>Em até uma hora útil, um consultor entra em contato pelo WhatsApp com a tabela e os horários disponíveis para visita.</p>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ================== FOOTER ================== -->
+  <footer class="foot" data-screen-label="10 Footer">
+    <div class="foot-top">
+      <div class="foot-brand display">
+        STUDIOS<br/>AVENIDA <span class="thin">II</span>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <span class="fc-k">Empreendimento</span>
+          <a href="#obra">A Obra</a>
+          <a href="#studios">Studios</a>
+          <a href="#lazer">Lazer</a>
+          <a href="#cidade">A Cidade</a>
+        </div>
+        <div class="foot-col">
+          <span class="fc-k">Comercial</span>
+          <a href="#contato">Agende visita</a>
+          <a href="#contato">Receber tabela</a>
+          <a href="#contato">Plantas e detalhes</a>
+        </div>
+        <div class="foot-col">
+          <span class="fc-k">Contato</span>
+          <a href="#">WhatsApp</a>
+          <a href="#">Instagram</a>
+          <a href="#">contato@studiosavenida.com.br</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Studios Avenida II — Construtora Avenida</span>
+      <span>Memorial de incorporação registrado no 1º Ofício do Registro de Imóveis de Santa Cruz do Sul / RS — Matrícula nº 48.221</span>
+      <span class="display foot-stamp">SCS · RS · BR</span>
+    </div>
+  </footer>
+
+</main>
+
+<!-- VIDEO MODAL (placeholder for real tour) -->
+<div class="video-modal" id="videoModal" hidden>
+  <button class="vm-close" id="vmClose" aria-label="Fechar">×</button>
+  <div class="vm-inner">
+    <div class="vm-screen">
+      <div class="vm-placeholder">
+        <span class="vmp-label display">TOUR · 02:14</span>
+        <span class="vmp-sub">Insira aqui o vídeo do prédio<br/>(arquivo .mp4 ou link do YouTube)</span>
+        <span class="vmp-help">No arquivo <code>index.html</code> descomente a tag <code>&lt;video&gt;</code> em <code>#heroVideo</code> ou substitua este placeholder por um <code>&lt;iframe&gt;</code> do YouTube.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
