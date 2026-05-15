@@ -555,7 +555,7 @@ em { font-style: italic; font-weight: 200; }
 }
 
 .retirar-depois {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 1050px) {
