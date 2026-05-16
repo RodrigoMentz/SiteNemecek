@@ -206,7 +206,6 @@ em { font-style: italic; font-weight: 200; }
 }
 .strip-item { display: flex; gap: .8rem; align-items: baseline; }
 .strip-item.right { justify-content: flex-end; }
-.strip-key { opacity: .55; }
 .strip-val em { color: var(--c-warm); font-style: normal; font-weight: 400; }
 /* center content */
 .hero-center {
@@ -374,7 +373,20 @@ em { font-style: italic; font-weight: 200; }
 .obra-head {
   max-width: 1400px; margin: 0 auto;
   padding: 0 3rem;
+  display: grid; grid-template-columns: 1fr 3fr;
+  gap: 4rem; align-items: start;
   margin-bottom: 8rem;
+}
+.obra-intro { display: flex; flex-direction: column; gap: 3rem; }
+.obra-statement {
+  font-size: clamp(2.5rem, 5.5vw, 6rem);
+  line-height: .96; margin: 0;
+}
+.obra-statement .line { display: block; }
+.obra-statement em { color: var(--c-warm); font-style: italic; font-weight: 300; }
+.obra-lead {
+  font-size: 1.05rem; line-height: 1.65; font-weight: 300;
+  opacity: .75; max-width: 52ch;
 }
 
 /* sticky stage */
@@ -409,12 +421,46 @@ em { font-style: italic; font-weight: 200; }
 .stage-row span:first-child { opacity: .4; }
 .stage-row .dim { opacity: .65; font-weight: 300; }
 
+/* specs strip */
+.obra-specs {
+  max-width: 1600px; margin: 0 auto;
+  padding: 0 3rem 4rem;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.08);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.spec-card {
+  background: var(--c-dark);
+  padding: 2.5rem 2rem;
+  display: flex; flex-direction: column; gap: .6rem;
+  transition: background .25s ease;
+}
+.spec-card:hover { background: var(--c-dark-2); }
+.spec-k {
+  font-family: var(--font-mono); font-size: .6rem;
+  letter-spacing: .3em; opacity: .3;
+}
+.spec-title {
+  font-family: var(--font-mono); font-size: .68rem;
+  letter-spacing: .2em; text-transform: uppercase; opacity: .5;
+}
+.spec-val {
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+  line-height: 1; margin: .5rem 0;
+}
+.spec-sub {
+  font-size: .72rem; opacity: .45; font-weight: 300;
+  letter-spacing: .04em; line-height: 1.4;
+}
+
 @media (max-width: 900px) {
   .obra { padding: 6rem 0 4rem; }
-  .obra-head { padding: 0 1.5rem; margin-bottom: 3rem; }
+  .obra-head { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2rem; margin-bottom: 3rem; }
   .obra-stage { height: 70vh; min-height: 480px; margin: 0 1.5rem 4rem; }
   .obra-stage-meta { left: 1.25rem; bottom: 1.25rem; }
   .stage-row { min-width: 0; grid-template-columns: 24px 100px 1fr; gap: .8rem; font-size: .6rem; padding-bottom: .5rem; }
+  .obra-specs { grid-template-columns: repeat(2, 1fr); padding: 0 1.5rem 3rem; }
 }
 
 /* ============================================================
