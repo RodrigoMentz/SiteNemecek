@@ -469,7 +469,7 @@ em { font-style: italic; font-weight: 200; }
   padding: 0 3rem 4rem;
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: rgba(255,255,255,.08);
+  background: var(--c-dark);
   border-top: 1px solid rgba(255,255,255,.08);
 }
 .spec-card {
@@ -503,6 +503,10 @@ em { font-style: italic; font-weight: 200; }
   .obra-stage-meta { left: 1.25rem; bottom: 1.25rem; }
   .stage-row { min-width: 0; grid-template-columns: 24px 100px 1fr; gap: .8rem; font-size: .6rem; padding-bottom: .5rem; }
   .obra-specs { grid-template-columns: repeat(2, 1fr); padding: 0 1.5rem 3rem; }
+}
+@media (max-width: 560px) {
+  .obra-specs { grid-template-columns: 1fr; }
+  .spec-card { padding: 1.75rem 1.25rem; }
 }
 
 /* ============================================================
@@ -895,6 +899,10 @@ em { font-style: italic; font-weight: 200; }
   .reasons { padding: 6rem 0; }
   .reasons-head { padding: 0 1.5rem; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
   .reasons-grid { grid-template-columns: repeat(2, 1fr); padding: 0 1.5rem; }
+}
+@media (max-width: 560px) {
+  .reasons-grid { grid-template-columns: 1fr; }
+  .reason { padding: 2rem 1.25rem; }
 }
 
 /* ============================================================
