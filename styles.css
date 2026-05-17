@@ -217,8 +217,9 @@ em { font-style: italic; font-weight: 200; }
 .hero-grade {
   position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.12) 28%, rgba(0,0,0,0) 50%, rgba(0,0,0,.35) 80%, rgba(0,0,0,.85) 100%);
+    linear-gradient(180deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.35) 25%, rgba(0,0,0,.25) 50%, rgba(0,0,0,.5) 78%, rgba(0,0,0,.9) 100%);
 }
+.hero-frame { filter: brightness(.97) contrast(1.05); }
 .hero-vignette {
   position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(ellipse at center, rgba(0,0,0,0) 35%, rgba(0,0,0,.55) 100%);
@@ -271,6 +272,7 @@ em { font-style: italic; font-weight: 200; }
 .hero-numeral {
   display: inline-block;
   margin-left: .4em;
+  padding-right: .2em;
   font-weight: 400; font-style: italic;
   color: #fff;
 }
@@ -389,10 +391,10 @@ em { font-style: italic; font-weight: 200; }
   align-items: flex-start;
 }
 .num-cell:last-child { border-right: 0; }
-.n-key { font-family: var(--font-mono); font-size: .7rem; opacity: .4; letter-spacing: .2em; }
-.n-val { font-size: clamp(3rem, 6vw, 6rem); line-height: .9; }
+.n-key { font-family: var(--font-mono); font-size: .65rem; opacity: .4; letter-spacing: .2em; }
+.n-val { font-size: clamp(2rem, 3.8vw, 3.2rem); line-height: .9; }
 .n-val small { font-size: .55em; font-weight: 200; opacity: .5; padding: 0 .15em; }
-.n-lbl { font-size: .8rem; opacity: .65; text-transform: uppercase; letter-spacing: .2em; }
+.n-lbl { font-size: .72rem; opacity: .65; text-transform: uppercase; letter-spacing: .2em; }
 
 @media (max-width: 760px) {
   .num-grid { grid-template-columns: repeat(2, 1fr); }
@@ -622,6 +624,13 @@ em { font-style: italic; font-weight: 200; }
 .fp-pin.pin-3 { bottom: 22%; left: -12%; }
 .fp-pin.pin-4 { bottom: 18%; right: -6%; }
 
+@media (max-width: 1050px) {
+  .fp-pin.pin-1 { top: 6%; left: 4%; }
+  .fp-pin.pin-2 { top: 6%; right: 4%; left: auto; }
+  .fp-pin.pin-3 { bottom: 28%; left: 4%; }
+  .fp-pin.pin-4 { bottom: 12%; right: 4%; left: auto; }
+}
+
 /* strip gallery */
 .strip-gallery {
   max-width: 1600px; margin: 0 auto;
@@ -651,7 +660,7 @@ em { font-style: italic; font-weight: 200; }
   .studio-feature, .floorplan-wrap { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 4rem; }
   .sf-img.big { inset: 0 14% 14% 0; }
   .fp-image { aspect-ratio: 5/8; padding: 2rem; }
-  .fp-pin { display: none; }
+  .fp-pin { font-size: .55rem; padding: .25rem .5rem; }
   .strip-gallery { grid-template-columns: 1fr; }
 }
 
