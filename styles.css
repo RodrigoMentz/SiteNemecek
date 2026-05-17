@@ -655,10 +655,6 @@ em { font-style: italic; font-weight: 200; }
   padding-top: 1rem;
 }
 
-.retirar-depois {
-  display: none !important;
-}
-
 @media (max-width: 1050px) {
   .studios { padding: 6rem 0 4rem; }
   .studios-head, .studio-feature, .floorplan-wrap, .strip-gallery { padding: 0 1.5rem; }
