@@ -619,16 +619,22 @@ em { font-style: italic; font-weight: 200; }
   white-space: nowrap;
 }
 .fp-pin span { opacity: .55; }
-.fp-pin.pin-1 { top: 18%; left: -10%; }
+.fp-pin.pin-1 { top: 18%; left: -3%; }
 .fp-pin.pin-2 { top: 14%; right: -8%; }
-.fp-pin.pin-3 { bottom: 22%; left: -12%; }
+.fp-pin.pin-3 { bottom: 22%; left: -5%; }
 .fp-pin.pin-4 { bottom: 18%; right: -6%; }
 
 @media (max-width: 1050px) {
-  .fp-pin.pin-1 { top: 6%; left: 4%; }
-  .fp-pin.pin-2 { top: 6%; right: 4%; left: auto; }
-  .fp-pin.pin-3 { bottom: 28%; left: 4%; }
-  .fp-pin.pin-4 { bottom: 12%; right: 4%; left: auto; }
+  .fp-pin {
+    white-space: nowrap;
+    font-size: .42rem;
+    padding: .3rem .5rem;
+    gap: .25rem;
+  }
+  .fp-pin.pin-1 { top: 18%; left: 2%; right: auto; }
+  .fp-pin.pin-2 { top: 14%; right: 2%; left: auto; }
+  .fp-pin.pin-3 { bottom: 22%; left: 2%; right: auto; }
+  .fp-pin.pin-4 { bottom: 18%; right: 2%; left: auto; }
 }
 
 /* strip gallery */
