@@ -289,6 +289,37 @@
   }
 
   /* ----------------------------------------------------------
+     Mobile nav drawer
+     ---------------------------------------------------------- */
+  (function mobileNav() {
+    const burger = $('#navBurger');
+    const drawer = $('#navDrawer');
+    if (!burger || !drawer) return;
+
+    const open  = () => {
+      drawer.classList.add('is-open');
+      burger.classList.add('is-open');
+      burger.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      drawer.classList.remove('is-open');
+      burger.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    burger.addEventListener('click', () => {
+      drawer.classList.contains('is-open') ? close() : open();
+    });
+
+    drawer.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  })();
+
+  /* ----------------------------------------------------------
      Boot
      ---------------------------------------------------------- */
   window.addEventListener('load', () => {
