@@ -637,33 +637,14 @@ em { font-style: italic; font-weight: 200; }
   .fp-pin.pin-4 { bottom: 18%; right: 2%; left: auto; }
 }
 
-/* strip gallery */
-.strip-gallery {
-  max-width: 1600px; margin: 0 auto;
-  padding: 0 3rem;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-}
-.strip-gallery figure { margin: 0; }
-.sg-img {
-  width: 100%; aspect-ratio: 4/3;
-  background-size: cover; background-position: center;
-}
-.strip-gallery figcaption {
-  font-family: var(--font-mono);
-  font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
-  opacity: .7;
-  padding-top: 1rem;
-}
-
 @media (max-width: 1050px) {
   .studios { padding: 6rem 0 4rem; }
-  .studios-head, .studio-feature, .floorplan-wrap, .strip-gallery { padding: 0 1.5rem; }
+  .studios-head, .studio-feature, .floorplan-wrap { padding: 0 1.5rem; }
   .studios-head { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
   .studio-feature, .floorplan-wrap { grid-template-columns: 1fr; gap: 3rem; margin-bottom: 4rem; }
   .sf-img.big { inset: 0 14% 14% 0; }
   .fp-image { aspect-ratio: 5/8; padding: 2rem; }
   .fp-pin { font-size: .55rem; padding: .25rem .5rem; }
-  .strip-gallery { grid-template-columns: 1fr; }
 }
 
 /* ============================================================
