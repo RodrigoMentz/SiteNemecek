@@ -24,12 +24,21 @@
 <div class="noise-overlay"></div>
 
 <!-- PRELOADER -->
-<div class="loader" id="loader" data-screen-label="00 Loader">
-  <div class="loader-inner">
-    <div class="loader-label display">STUDIOS / AVENIDA II</div>
-    <div class="loader-sub">SANTA CRUZ DO SUL · RS</div>
+<div class="loader" id="loader">
+  <div class="loader-top">
+    <span class="loader-label display">STUDIOS AVENIDA II</span>
+    <span class="loader-sub">Santa Cruz do Sul · RS</span>
+  </div>
+  <div class="loader-center">
+    <div class="loader-pct-row">
+      <span class="loader-percent display" id="loaderPct">000</span>
+      <span class="loader-unit">%</span>
+    </div>
     <div class="loader-track"><span class="loader-bar"></span></div>
-    <div class="loader-percent display"><span id="loaderPct">000</span></div>
+  </div>
+  <div class="loader-bottom">
+    <span class="loader-tag">Carregando experiência</span>
+    <span class="loader-coords">29°42'30.9"S 52°26'16.1"W</span>
   </div>
 </div>
 
@@ -133,7 +142,7 @@
         </p>
         <div class="m-foot-sign">
           <span class="sign-line">— Studios Avenida II</span>
-          <span class="sign-coords">29°71′S · -52°43′W</span>
+          <span class="sign-coords">29°42'30.9"S 52°26'16.1"W</span>
         </div>
       </div>
     </div>
@@ -579,27 +588,13 @@
     </div>
 
     <div class="foot-bottom">
-      <span>© 2026 Studios Avenida II — Construtora Avenida</span>
+      <span>© 2026 Studios Avenida II — Construtora Copini</span>
       <span>Memorial de incorporação registrado no 1º Ofício do Registro de Imóveis de Santa Cruz do Sul / RS — Matrícula nº 48.221</span>
       <span class="display foot-stamp">SCS · RS · BR</span>
     </div>
   </footer>
 
 </main>
-
-<!-- VIDEO MODAL (placeholder for real tour) -->
-<div class="video-modal" id="videoModal" hidden>
-  <button class="vm-close" id="vmClose" aria-label="Fechar">×</button>
-  <div class="vm-inner">
-    <div class="vm-screen">
-      <div class="vm-placeholder">
-        <span class="vmp-label display">TOUR · 02:14</span>
-        <span class="vmp-sub">Insira aqui o vídeo do prédio<br/>(arquivo .mp4 ou link do YouTube)</span>
-        <span class="vmp-help">No arquivo <code>index.html</code> descomente a tag <code>&lt;video&gt;</code> em <code>#heroVideo</code> ou substitua este placeholder por um <code>&lt;iframe&gt;</code> do YouTube.</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script src="app.js"></script>
 </body>

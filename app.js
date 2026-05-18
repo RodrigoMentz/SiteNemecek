@@ -89,9 +89,9 @@
   function endLoader() {
     if (!loader) return;
     loader.classList.add('is-done');
-    document.body.classList.add('is-ready');
     initAnimations();
-    setTimeout(() => loader.remove(), 900);
+    setTimeout(() => document.body.classList.add('is-ready'), 380);
+    setTimeout(() => loader.remove(), 1050);
   }
 
   /* ----------------------------------------------------------
