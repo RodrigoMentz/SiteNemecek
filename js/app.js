@@ -322,15 +322,18 @@
   /* ----------------------------------------------------------
      Boot
      ---------------------------------------------------------- */
-  window.addEventListener('load', () => {
+  let loaderStarted = false;
+  function startLoader() {
+    if (loaderStarted) return;
+    loaderStarted = true;
     runLoader(endLoader);
-  });
-  // safety: if 'load' is delayed, kick off shortly after DOM
+  }
+
+  window.addEventListener('load', startLoader);
+  // safety: kick off shortly after DOM if load event is delayed
   document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
-      if (loader && !loader.classList.contains('is-done')) {
-        runLoader(endLoader);
-      }
+      if (loader && !loader.classList.contains('is-done')) startLoader();
     }, 50);
   });
 
